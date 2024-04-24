@@ -95,8 +95,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        words = new String[]{"apple", "banana", "aeroplane", "fox", "iron", "pleasure",
-                "game", "stick", "people", "treasure", "note", "elephant", "finish", "goat", "ruler", "program"};
+        words = new String[]{"နေကောင်းလား", "ဘောလုံးကစားကြမယ်", "ဘယ်မှာနေသလဲ", "ရေသောက်ချင်တယ်", "ထမင်းစားပြီးပြီလား", "ချစ်သူရှိနေတာလား", "နင့်ရည်းစားကဘယ်သူလဲ",
+        "မြန်မာနိုင်ငံ", "ကြက်သားဟင်းကြိုက်တယ်", "အသားကင်စားချင်တယ်", "မိုးရွာနေတယ်", "ကွန်ပျူတာ", "ရေကူးကြမယ်", "မင်းကဘယ်သူလဲ", "သူ့ကိုယုံလား", "အသည်းကွဲနေတယ်",
+        "သူဒဏ်ရာရထားတယ်", "ဆိုင်ကယ်ဆီသွားထည့်နေတယ်"};
 
         guessedWords = new HashSet<>();
 
@@ -118,13 +119,10 @@ public class MainActivity extends AppCompatActivity {
             guessWord = getRandomWord();
         }
         guessedWords.add(guessWord);
-        List<Character> characters = new ArrayList<>();
-        for (char ch : guessWord.toCharArray()) {
-            characters.add(ch);
-        }
+        List<String> characters = SyllableSegmentation.segment(guessWord);
         Collections.shuffle(characters);
         StringBuilder result = new StringBuilder();
-        for (char ch : characters) {
+        for (String ch : characters) {
             result.append(ch);
         }
         return result.toString();

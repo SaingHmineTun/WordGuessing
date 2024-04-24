@@ -10,9 +10,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="#abcdef"
+        android:background="#56AB78"
         android:gravity="center"
         android:text="@string/app_name"
+        android:textColor="#123456"
         android:textSize="32sp"
         android:textStyle="bold" />
 
